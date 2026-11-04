@@ -426,7 +426,7 @@ ko:{
  discordRep:(n,o)=>'['+n+'] 요즘 기분이 좋지 않아 '+o+'와(과) 불화가 잦습니다.',
  storyH:k=>'근시 '+k+'의 이야기',repH:k=>'근시 '+k+' 보고',repLog:k=>kga(k)+' 보고하기 위해 찾아왔습니다.',
  nochange:'변화 없음',
- broke:n=>'도검 파괴: '+n+' (혼마루를 떠났습니다). 신뢰도 -20',kinGone:'근시 공석: 근시가 혼마루를 떠났습니다.',firstHurt:n=>'초기도 '+n+' 중상. 신뢰도 -15',
+ broke:n=>'도검 파괴: '+n+' (혼마루를 떠났습니다). 신뢰도 -20',kinGone:'근시 공석: 근시가 혼마루를 떠났습니다.',firstBroke:n=>'초기도 '+n+' 파괴: 혼마루를 떠났습니다. 신뢰도 -25',lastHurt:n=>n+' 중상. 신뢰도 -15',firstHurt:n=>'초기도 '+n+' 중상. 신뢰도 -15',
  rest:n=>n+': 중상으로 출진에서 제외되어 요양했다 (체력 +8)',
  hxC:'체력 +6 · 기분 +4',hxP:'전원 기분 +3',hxX:m=>'체력 -20'+(m<60?' · '+(m<30?'기분 최악':'기분 저조')+'(물자 감소)':''),
  injured:(n,h)=>n+': '+['','경상','중상'][h]+' 상태가 되었습니다.',
@@ -444,7 +444,7 @@ ko:{
  forgeC:n=>keul(n)+' 단조합니다',forgeD:n=>kga(n)+' 단조되어 혼마루에 합류했습니다.',forgeNo:'단조하지 않습니다',forgeNoD:'이번에는 단조를 보류했습니다. 옥강을 아껴 두었습니다.',
  ev:[n=>'시간 역행군 기습! 옥강 -'+n+', 영력 -2',n=>'시공이 일그러졌습니다. 영력 -'+n,()=>'혼마루에 감기가 돕니다. 신뢰도 -5',(f,m)=>'정부 보급품 도착: 군량 +'+f+', 옥강 +'+m,()=>'전원이 모여 옛 이야기를 나눴습니다. 신뢰도 +8',()=>'벚꽃잎이 혼마루에 흩날립니다. 신뢰도 +8',n=>'군량 창고에 습기. 군량 -'+n],
  yearEnd:(f,e)=>'연말 정산: 군량 -'+f+' / 영력 -'+e+' / 신뢰도 +2',starve:'군량 고갈. 굶주림이 이어집니다.',
- end:{en:'사니와의 영력이 바닥났습니다. 혼마루의 결계가 무너졌습니다.',mo:'신뢰도 붕괴. 도검남사들이 사니와를 떠났습니다. 혼마루는 텅 비었습니다.',win:'30년 완수! 역사는 지켜졌습니다.',fall:'30년이 흘렀지만 혼마루의 시간은 더 이상 흐르지 않습니다. 사니와는 타락한 채, 아무도 찾아오지 않는 영원한 혼마루에 갇히고 말았습니다.',sp:'혼마루를 떠나 단둘이 영원을 함께하기로 했습니다. 정부의 눈이 닿지 않는 곳에서 두 사람만의 조용한 나날이 이어집니다.'},
+ end:{en:'사니와의 영력이 바닥났습니다. 혼마루의 결계가 무너졌습니다.',mo:'신뢰도 붕괴. 도검남사들이 사니와를 떠났습니다. 혼마루는 텅 비었습니다.',last:'마지막 도검이 파괴되었습니다. 혼마루에는 아무도 남지 않았습니다.',win:'30년 완수! 역사는 지켜졌습니다.',fall:'30년이 흘렀지만 혼마루의 시간은 더 이상 흐르지 않습니다. 사니와는 타락한 채, 아무도 찾아오지 않는 영원한 혼마루에 갇히고 말았습니다.',sp:'혼마루를 떠나 단둘이 영원을 함께하기로 했습니다. 정부의 눈이 닿지 않는 곳에서 두 사람만의 조용한 나날이 이어집니다.'},
   spLog1:'30년이 지나도 곁에 남은 도검은 단 한 자루뿐이었습니다. 이 도검과 함께 정부의 눈을 피해 도주해, 단둘이 살아갈 길이 열렸습니다.',
   spLog2:n=>kga(n)+' 조용히 무릎을 꿇고 사니와를 올려다봅니다.',
   spQ:n=>kga(n)+' 당신에게 영원을 맹세합니다. 받아들이시겠습니까?',
@@ -456,8 +456,8 @@ ko:{
   dealNoD:'서신을 불태워 거래를 거절했습니다.',
   dealMark:'밀약',
   modeN:'보통',modeH:'하드',hardMark:'하드',
-  modeD:['기본 난이도입니다.','시작 자원이 적고, 영력 소모·군량 소비·출진 피해·파괴 위험·불화가 커지며, 이로운 사건은 줄어듭니다.'],
-  hardIntro:['하드 모드: 시작 자원이 줄었고 영력은 매년 약 6%씩 줄어듭니다. 군량 소비, 출진 피해, 파괴 위험, 불화가 모두 커졌습니다.','b'],
+  modeD:['기본 난이도입니다.','초기도도 파괴될 수 있습니다. 시작 자원이 적고, 영력 소모·군량 소비·출진 피해·파괴 위험·불화가 커지며, 이로운 사건은 줄어듭니다.'],
+  hardIntro:['하드 모드: 시작 자원이 줄었고 영력은 매년 약 6%씩 줄어듭니다. 군량 소비, 출진 피해, 파괴 위험, 불화가 모두 커졌고, 초기도도 파괴될 수 있습니다. 도검이 모두 사라지면 끝입니다.','b'],
   seaLog:['봄이 찾아왔습니다. 정원의 벚나무에 꽃망울이 맺히고, 혼마루에 따스한 바람이 불어옵니다.','여름이 되었습니다. 매미 소리가 울려 퍼지고, 해 질 녘에는 반딧불이가 정원을 떠다닙니다.','가을이 깊어 갑니다. 단풍잎이 마당에 쌓이고, 선선한 바람이 혼마루를 감쌉니다.','겨울이 왔습니다. 처마 끝에 고드름이 맺히고, 정원에는 하얀 눈이 내려앉습니다.'],
  final:(c,sc,w)=>'도검 '+c+'자루 / 최종 점수: '+sc+(w?'':' (실패)'),
  intro:(nm,f,d)=>[
@@ -476,6 +476,7 @@ ko:{
 let P=L.ko,U=UI.ko;
 let hard=0;try{hard=localStorage.getItem('hm30-hard')==='1'?1:0}catch(e){}
 const H=()=>!!(s&&s.hard);
+const fid=()=>s.roster.includes(first.n)?first.id:'';
 function setMode(v){
   hard=v;try{localStorage.setItem('hm30-hard',v?'1':'0')}catch(e){}
   updMode();
@@ -513,7 +514,7 @@ function put(lb,t,c){
   L.scrollTop=1e9;
 }
 function ros(){
-  $('ros').innerHTML='<h6>'+U.kinH+': '+(s.kin?s.kin:U.unset)+'</h6>'+s.roster.map((n,i)=>'<button class="'+(n===s.kin?'kin':'')+'" onclick="askKin('+i+')">'+(n===s.kin?'★ ':'')+n+(i===0?'<small>'+U.firstTag+'</small>':'')+'<small class="'+['','hw','hb'][st(n)]+'">'+U.hpL+' '+s.hp[n]+(st(n)?' '+U.inj[st(n)]:'')+'</small><small class="'+(s.md[n]<30?'hb':s.md[n]<60?'hw':'')+'">'+U.moodL+' '+s.md[n]+'</small></button>').join('');
+  $('ros').innerHTML='<h6>'+U.kinH+': '+(s.kin?s.kin:U.unset)+'</h6>'+s.roster.map((n,i)=>'<button class="'+(n===s.kin?'kin':'')+'" onclick="askKin('+i+')">'+(n===s.kin?'★ ':'')+n+(n===first.n?'<small>'+U.firstTag+'</small>':'')+'<small class="'+['','hw','hb'][st(n)]+'">'+U.hpL+' '+s.hp[n]+(st(n)?' '+U.inj[st(n)]:'')+'</small><small class="'+(s.md[n]<30?'hb':s.md[n]<60?'hw':'')+'">'+U.moodL+' '+s.md[n]+'</small></button>').join('');
 }
 function askKin(i){
   if(over||kinQ!==null||iss!==null)return;
@@ -609,8 +610,10 @@ function render(){
   save();
 }
 function lose(w,fs){
-  if(C()>1&&w!==s.roster[0]){const n=w?s.roster.splice(s.roster.indexOf(w),1)[0]:s.roster.splice(R(1,C()-1),1)[0];delete s.hp[n];delete s.md[n];s.mo-=H()?25:20;if(fs)s.brk=(s.brk||0)+1;s.lost.push([n,s.day]);log(U.broke(n),'b');if(s.kin===n){s.kin=null;log(U.kinGone,'w')}}
-  else{s.mo-=15;s.hp[first.n]=Math.min(s.hp[first.n],10);log(U.firstHurt(first.n),'b')}
+  const hk=H()&&!!w&&s.roster.includes(w);
+  if(C()>1&&(w!==s.roster[0]||hk)){const n=w?s.roster.splice(s.roster.indexOf(w),1)[0]:s.roster.splice(R(1,C()-1),1)[0];delete s.hp[n];delete s.md[n];s.mo-=H()?25:20;if(fs)s.brk=(s.brk||0)+1;s.lost.push([n,s.day]);log(n===first.n?U.firstBroke(n):U.broke(n),'b');if(s.kin===n){s.kin=null;log(U.kinGone,'w')}}
+  else if(hk){const n=s.roster.splice(0,1)[0];delete s.hp[n];delete s.md[n];if(fs)s.brk=(s.brk||0)+1;s.lost.push([n,s.day]);s.kin=null;log(n===first.n?U.firstBroke(n):U.broke(n),'b');finish('last')}
+  else{const t=s.roster[0];s.mo-=15;s.hp[t]=Math.min(s.hp[t],10);log(t===first.n?U.firstHurt(t):U.lastHurt(t),'b')}
 }
 let sq=null,sor=null,sqp=[],sqs=false;
 let spd=1,paused=false,prog=0,last=Date.now();
@@ -624,7 +627,7 @@ function work(){
     log(U.rest(n),'i');
     return;
   }
-  const e={},t=a[2]||'',id=first.id;
+  const e={},t=a[2]||'',id=fid();
   for(const k in a[1]){const x=a[1][k];e[k]=Array.isArray(x)?R(x[0],x[1]):x}
   if(e.mo>0)e.mo=Math.ceil(e.mo/2);
   if(t==='x'){const m=s.md[n];e.mat=Math.max(1,Math.round(e.mat*(m>=60?1:m>=30?0.7:0.4)))}
@@ -654,7 +657,8 @@ function month(){
   if(s.sch.includes(s.mon)&&!s.deal){s.sch=s.sch.filter(x=>x!==s.mon);prog+=MS;openSquad();return}
   if(s.em===s.mon){s.em=-1;if(forgeEvent()){prog+=MS;return}}
   const k=Math.ceil(C()/2);
-  for(let i=0;i<k;i++)work();
+  for(let i=0;i<k&&!over;i++)work();
+  if(over)return;
   s.roster.forEach(x=>{s.hp[x]=Math.min(100,s.hp[x]+1);s.md[x]=Math.min(100,s.md[x]+1)});
   if(C()>1)s.roster.forEach(x=>{
     const m=s.md[x];
@@ -726,7 +730,7 @@ function sortieTick(){
   }
   let mat=0,low=false;
   q.forEach(n=>{const m=s.md[n];if(m<60)low=true;mat+=Math.max(1,Math.round(R(2,4)*(m>=60?1:m>=30?0.7:0.4)))});
-  if(first.id==='m'&&q.includes(first.n))mat+=2;
+  if(fid()==='m'&&q.includes(first.n))mat+=2;
   if(sor.sup)mat=Math.round(mat*1.3);
   if(H())mat=Math.max(1,Math.round(mat*0.8));
   const hurt=Math.max(6,20-3*(s.eq||0)-(sor.sup?8:0))+(H()?3:0);
@@ -739,9 +743,10 @@ function sortieTick(){
     if(n!==s.kin)s.md[n]=Math.max(0,s.md[n]-3);
     const h1=st(n);
     if(h1>h0)log(U.injured(n,h1),'w');
-    if(Math.random()<(h0===2?(first.id==='y'?0.2:0.3):(first.id==='y'?0.01:0.03))*(H()?1.5:1))lose(n,1);
+    if(Math.random()<(h0===2?(fid()==='y'?0.2:0.3):(fid()==='y'?0.01:0.03))*(H()?1.5:1))lose(n,1);
   });
   sor=null;s.mon++;clamp();
+  if(over)return;
   if(s.mo<=0)return finish('mo');
   render();
 }
@@ -780,7 +785,7 @@ const EV=[
  ()=>{const n=R(2,4);s.food-=n;log(U.ev[6](n),'w')}
 ];
 function yearEnd(){
-  const fc=H()?Math.ceil(C()*2.25)+1:C()*2+1,ne=Math.floor(s.en*(first.id==='s'?(H()?0.96:0.97):(H()?0.94:0.95))),ec=s.en-ne;
+  const fc=H()?Math.ceil(C()*2.25)+1:C()*2+1,ne=Math.floor(s.en*(fid()==='s'?(H()?0.96:0.97):(H()?0.94:0.95))),ec=s.en-ne;
   s.food-=fc;s.en=ne;
   log(U.yearEnd(fc,ec),'');
   if(s.food<0){s.food=0;s.mo-=H()?15:10;log(U.starve,'b');if(!s.deal)lose()}
